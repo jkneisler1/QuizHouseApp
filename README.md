@@ -21,3 +21,12 @@ For your output, print out:
 Print a similar statement for your future home:
 
 "My future home ..."  
+
+
+
+Need an inspiration for a future home? See
+https://en.wikipedia.org/wiki/Antilia_(building)
+
+<hr/>
+
+## Once you are finished please use this example to create a class for Window, Door, and Floor. Your House class will then be made of classes rather than String variables. This is called Composition.
