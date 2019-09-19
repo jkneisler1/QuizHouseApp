@@ -3,59 +3,65 @@ package com.company;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class House {
-    private int floors; // floors could have types, finishing
-    private int windows; // windows could have different treatment types
+/**
+ * The user creates the number of floors
+ * Then they create rooms on each floor
+ */
 
-    private int doors; // doors could have different shapes, color, etc
-    private int sqFt;
+public class House {
+    // private Floor floor;
+    private ArrayList<Floor> floors; // floors could have types, finishing
+    // private Room room;
+    // private ArrayList<Room> rooms;
+    // private Window window;
+    // private ArrayList<Window> windows = new ArrayList<>(); // windows could have different treatment types
+    // private Door door;
+    // private ArrayList<Door> doors; // doors could have different shapes, color, etc
+    private int totalSqFt;
     private double salesPrice;
+    private static final double pricePerSqFt = 200.0;
+
+    public void addFloor(int level, String desc) {
+        floors.add(new Floor(level, desc));
+    }
+
+    public Floor getFloor(int fl) {
+        return floors.get(fl);
+    }
+
+    public void constructHouse() {
+
+    }
 
     public House(){
 
     }
 
-    public House(int floors){
+    public House(ArrayList<Floor> floors){
         this.floors = floors;
+        this.salesPrice = 0.0;
+        this.totalSqFt = 0;
     }
 
-    public House(int floors, int windows, int doors, int sqFt, double salesPrice) {
+    public House(ArrayList<Floor> floors, int totalSqFt, double salesPrice) {
         this.floors = floors;
-        this.windows = windows;
-        this.doors = doors;
-        this.sqFt = sqFt;
+        this.totalSqFt = totalSqFt;
         this.salesPrice = salesPrice;
     }
 
-    public void setFloors(int floors){
+    public void setFloors(ArrayList<Floor> floors) {
         this.floors = floors;
     }
-    public int getFloors(){
+
+    public ArrayList<Floor> getFloors(){
         return floors;
     }
 
-    public int getWindows() {
-        return windows;
+        public int getTotalSqFt() {
+        return totalSqFt;
     }
-
-    public void setWindows(int windows) {
-        this.windows = windows;
-    }
-
-    public int getDoors() {
-        return doors;
-    }
-
-    public void setDoors(int doors) {
-        this.doors = doors;
-    }
-
-    public int getSqFt() {
-        return sqFt;
-    }
-
-    public void setSqFt(int sqFt) {
-        this.sqFt = sqFt;
+    public void setTotalSqFt(int totalSqFt) {
+        this.totalSqFt = totalSqFt;
     }
 
     public String getSalesPrice() {
@@ -70,9 +76,7 @@ public class House {
     @Override
     public String toString(){
         return getFloors() + " floors " +
-                getWindows() + " windows " +
-                getDoors() + " doors. It is " +
-                getSqFt() + " sq ft and worth $" +
+                getTotalSqFt() + " sq ft and worth $" +
                 getSalesPrice();
     }
 }
