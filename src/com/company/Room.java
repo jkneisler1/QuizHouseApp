@@ -8,8 +8,21 @@ public class Room {
     private ArrayList<Window> windows;
     private ArrayList<Door> doors;
     private int sqFt;
+    private ArrayList<String> secondFloorChoices;
+    private ArrayList<String> firstFloorChoices;
+    private ArrayList<String> basementChoices;
 
+    // Constructors
     public Room() {
+        secondFloorChoices = new ArrayList<>();
+        secondFloorChoices.add("Master bedroom");
+        secondFloorChoices.add("Master bathroom");
+        secondFloorChoices.add("Bedroom");
+        secondFloorChoices.add("Bathroom");
+        secondFloorChoices.add("Laundry room");
+
+        firstFloorChoices = new ArrayList<>();
+        basementChoices = new ArrayList<>();
     }
 
     public Room(String type, String floor, ArrayList<Window> windows, ArrayList<Door> doors, int sqFt) {
@@ -18,20 +31,19 @@ public class Room {
         this.windows = windows;
         this.doors = doors;
         this.sqFt = sqFt;
+
+        secondFloorChoices = new ArrayList<>();
+        firstFloorChoices = new ArrayList<>();
+        basementChoices = new ArrayList<>();
     }
 
+    // Getters and setters
     public String getType() {
         return type;
     }
+    public void setType(String type) { this.type = type; }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getFloor() {
-        return floor;
-    }
-
+    public String getFloor() { return floor; }
     public void setFloor(String floor) {
         this.floor = floor;
     }
@@ -39,7 +51,6 @@ public class Room {
     public ArrayList<Window> getWindows() {
         return windows;
     }
-
     public void setWindows(ArrayList<Window> windows) {
         this.windows = windows;
     }
@@ -47,7 +58,6 @@ public class Room {
     public ArrayList<Door> getDoors() {
         return doors;
     }
-
     public void setDoors(ArrayList<Door> doors) {
         this.doors = doors;
     }
@@ -55,7 +65,6 @@ public class Room {
     public int getSqFt() {
         return sqFt;
     }
-
     public void setSqFt(int sqFt) {
         this.sqFt = sqFt;
     }

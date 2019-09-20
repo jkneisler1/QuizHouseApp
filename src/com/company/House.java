@@ -9,17 +9,25 @@ import java.util.ArrayList;
  */
 
 public class House {
+
+    private ArrayList<Floor> floors = new ArrayList<>(); // floors could have types, finishing
+    private int totalSqFt = 0;
+    private double salesPrice = 0.0;
+    private static final double pricePerSqFt = 200.0;
+
     // private Floor floor;
-    private ArrayList<Floor> floors; // floors could have types, finishing
     // private Room room;
     // private ArrayList<Room> rooms;
     // private Window window;
     // private ArrayList<Window> windows = new ArrayList<>(); // windows could have different treatment types
     // private Door door;
     // private ArrayList<Door> doors; // doors could have different shapes, color, etc
-    private int totalSqFt;
-    private double salesPrice;
-    private static final double pricePerSqFt = 200.0;
+
+
+    // Methods
+    public void addSqFt(int sqft) {
+        totalSqFt += sqft;
+    }
 
     public void addFloor(int level, String desc) {
         floors.add(new Floor(level, desc));
@@ -33,6 +41,7 @@ public class House {
 
     }
 
+    // Constructors
     public House(){
 
     }
@@ -49,15 +58,15 @@ public class House {
         this.salesPrice = salesPrice;
     }
 
+    // Getters and Setters
     public void setFloors(ArrayList<Floor> floors) {
         this.floors = floors;
     }
-
     public ArrayList<Floor> getFloors(){
         return floors;
     }
 
-        public int getTotalSqFt() {
+    public int getTotalSqFt() {
         return totalSqFt;
     }
     public void setTotalSqFt(int totalSqFt) {

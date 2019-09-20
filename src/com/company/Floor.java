@@ -1,12 +1,33 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Floor {
     private int level;
     private String descr;
     private ArrayList<Room> rooms;
 
+    private HashMap<String, Double> optionCost = new HashMap<>();
+    private HashMap<String, Integer> selection = new HashMap<>();
+
+    public Integer chooseFloor(String fl) {
+        selection.put("carpet", 0);
+        selection.put("tile", 1);
+        selection.put("wood", 2);
+
+        return selection.get(fl);
+    }
+
+    public Double getOptionCost(String str) {
+        optionCost.put("carpet", 0.0);
+        optionCost.put("tile", 50.0);
+        optionCost.put("wood", 75.0);
+
+        return optionCost.get(str);
+    }
+
+    // Constructors
     public Floor() {
         int level = -1;
         String descr = "";
